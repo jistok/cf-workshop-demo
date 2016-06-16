@@ -17,7 +17,7 @@ public class Attendee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long attendeeId;
 	
 	@Column(nullable = false)
 	private String firstName;
@@ -74,19 +74,19 @@ public class Attendee {
 	}
 
 	/**
-	 * Gets the id
-	 * @return the id
+	 * Gets the attendeeId
+	 * @return the attendeeId
 	 */
-	public Long getId() {
-		return id;
+	public Long getAttendeeId() {
+		return attendeeId;
 	}
 
 	/**
-	 * Sets the id
-	 * @param id the id to set
+	 * Sets the attendeeId
+	 * @param attendeeId the attendeeId to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setAttendeeId(Long attendeeId) {
+		this.attendeeId = attendeeId;
 	}
 
 	/**
