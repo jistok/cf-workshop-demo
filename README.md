@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This is the Spring MVC sample application for the Pivotal CF Workshop.
+This is the Spring Boot sample application for the Pivotal CF Workshop.
 It is intended to demonstrate some of the basic functionality of Pivotal
 CF:
 
