@@ -217,6 +217,35 @@ public class Attendee {
 		this.emailAddress = emailAddress;
 	}
 	
+	/**
+	 * Overrides Object's toString method to return the
+	 * state of the Attendee object.
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Attendee = [firstName: ");
+		sb.append(firstName);
+		sb.append(", lastName: ");
+		sb.append(lastName);
+		sb.append(", address: ");
+		sb.append(address);
+		sb.append(", city: ");
+		sb.append(city);
+		sb.append(", state: ");
+		sb.append(state);
+		sb.append(", zipCode: ");
+		sb.append(zipCode);
+		sb.append(", phoneNumber: ");
+		sb.append(phoneNumber);
+		sb.append(", emailAddress: ");
+		sb.append(emailAddress);
+		sb.append("]");		
+		return sb.toString();
+	}
+	
 	
 
 }
