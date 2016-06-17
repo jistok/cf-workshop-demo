@@ -20,7 +20,7 @@ import io.pivotal.cf.workshop.EnvironmentInfo;
  *
  */
 @RestController
-@RequestMapping(path = "/environment")
+@RequestMapping(value = "/environment")
 public class EnvironmentController {
 	
 	private static final Log log = LogFactory.getLog(EnvironmentController.class);
@@ -31,7 +31,7 @@ public class EnvironmentController {
 	 * @return A JSON list of environment information.
 	 */
 	@SuppressWarnings("unchecked")
-	@RequestMapping(path = "/info", method = RequestMethod.GET)
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
 	public @ResponseBody EnvironmentInfo getEnvironmentInfo() {
 		Map<String, String> vcapApplication = new HashMap<>();
 		ObjectMapper mapper = new ObjectMapper();
