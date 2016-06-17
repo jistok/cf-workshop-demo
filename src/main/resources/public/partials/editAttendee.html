@@ -1,0 +1,54 @@
+<div ng-controller="EditEntryController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<h2>Time Entry Details</h2>
+				<div>
+					<a href="#/entries">Back to Entry List</a>
+				</div>
+				<hr/>
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-10">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<!-- Display the time entry detail form -->
+				<form>
+					<div class="form-group">
+						<label for="timeEntryId">ID:</label>
+						<input type="text" id="timeEntryId" class="form-control" ng-model="entry.timeEntryId" value="{{entry.timeEntryId}}" readonly="readonly"/>
+					</div>
+					<div class="form-group">
+						<label for="feName">FE Name:</label>
+						<input type="text" id="feName" class="form-control" ng-model="entry.feName" value="{{entry.feName}}" placeholder="FE Name" required="required"/>
+					</div>
+					<div class="form-group">
+						<label for="accountName">Account Name:</label>
+						<input type="text" id="accountName" class="form-control" ng-model="entry.accountName" value="{{entry.accountName}}" placeholder="Account Name" required="required"/>
+					</div>
+					<div class="form-group">
+						<label for="date">Date:</label>
+						<input type="text" id="date" class="form-control" ng-model="entry.date" value="{{dateToDisplay}}" placeholder="Date" required="required"/>
+					</div>
+					<div class="form-group">
+						<label for="hours">Hours:</label>
+						<input type="number" id="hours" class="form-control" ng-model="entry.hours" value="{{entry.hours}}" placeholder="Hours" required="required"/>
+					</div>
+					<div class="well">
+						<input type="submit" ng-click="update(entry)" class="btn btn-primary" value="Save"/>
+						<input type="button" ng-click="reset()" class="btn btn-warning" value="Reset"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

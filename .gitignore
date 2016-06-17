@@ -2,5 +2,6 @@
 .settings
 .project
 .mvn
+.DS_Store
 target
 data
