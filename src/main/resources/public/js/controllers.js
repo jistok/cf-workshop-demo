@@ -73,7 +73,7 @@ cfWorkshopApp.controller('EnvironmentController', function($scope, $http, $route
 	//Handles the kill function
 	$scope.kill = function() {
 		$http.get("/environment/kill").success(function(data) {
-			$scope.message = "Successfully killed the app instance.";
+			$scope.message = "Failed to kill the app instance.";
 		}).error(function(data) {
 			$scope.message = "Successfully killed the app instance.";			
 		});
