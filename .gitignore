@@ -1,6 +1,7 @@
 .classpath
 .settings
 .project
+.springBeans
 .mvn
 .DS_Store
 target
