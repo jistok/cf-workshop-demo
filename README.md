@@ -1,8 +1,8 @@
-## CF Workshop Boot
+## CF Workshop Demo
 
 ### Introduction
 
-This is the Spring Boot sample application for the Pivotal CF Workshop.
+This is demo app for CF workshops, written in Spring Boot.
 It is intended to demonstrate some of the basic functionality of Pivotal
 CF:
 
@@ -10,15 +10,15 @@ CF:
  * Pivotal CF environment variables
  * Pivotal CF service variables
  * Scaling, router and load balancing
- * Health manager and application restart
+ * Health management and application restart
  * RDBMS services and application auto-configuration
 
 ### Building, Packaging, and Deploying
 
-#### To get the source code and build the WAR file
+#### To get the source code and build the JAR file
 
 
-    git clone https://github.com/pivotal-cf-workshop/cf-workshop-spring-mvc
+    git clone https://github.com/pivotal-cf-workshop/cf-workshop-demo
 
     mvn clean package
 
