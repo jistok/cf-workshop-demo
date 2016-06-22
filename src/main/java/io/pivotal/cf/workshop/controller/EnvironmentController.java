@@ -45,25 +45,27 @@ public class EnvironmentController {
 		if (System.getenv("VCAP_APPLICATION") != null) {
 			Map<String, Object> vcapApplicationMap = 
 					jsonParser.parseMap(System.getenv("VCAP_APPLICATION"));
-			applicationName = (String) vcapApplicationMap.get("application_name");
+			if (vcapApplicationMap.containsKey("application_name")) {
+				applicationName = (String) vcapApplicationMap.get("application_name");
+			}
 			List<String> uriList = (List<String>) vcapApplicationMap.get("uris");
-			StringBuilder uriBuilder = new StringBuilder();
 			Iterator<String> uriIterator = uriList.iterator();
 			while (uriIterator.hasNext()) {
+				StringBuilder uriBuilder = new StringBuilder();
 				uriBuilder.append(uriIterator.next());
 				if (uriIterator.hasNext()) {
 					uriBuilder.append(", ");
 				}
+				uris = uriBuilder.toString();
 			}
-			uris = uriBuilder.toString();
 		}
 		
 		//VCAP_SERVICES
 		if (System.getenv("VCAP_SERVICES") != null) {
 			Map<String, Object> vcapServicesMap = 
 					jsonParser.parseMap(System.getenv("VCAP_SERVICES"));
-			StringBuilder servicesBuilder = new StringBuilder();
 			if ((vcapServicesMap != null) && (vcapServicesMap.keySet().size() > 0)) {
+				StringBuilder servicesBuilder = new StringBuilder();
 				Iterator<String> servicesIterator = vcapServicesMap.keySet().iterator();
 				while (servicesIterator.hasNext()) {
 					String nextKey = servicesIterator.next();
@@ -72,8 +74,8 @@ public class EnvironmentController {
 						servicesBuilder.append(", ");
 					}
 				}
+				boundServices = servicesBuilder.toString();
 			}
-			boundServices = servicesBuilder.toString();
 		}
 		
 		EnvironmentInfo info = new EnvironmentInfo();
