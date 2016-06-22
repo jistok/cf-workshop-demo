@@ -4,5 +4,5 @@
 .springBeans
 .mvn
 .DS_Store
-target
-data
+target/
+data/
