@@ -42,7 +42,7 @@ public class EnvironmentInfo {
 	 * Sets the uri
 	 * @param uris the uri to set
 	 */
-	public void setUris(String uri) {
+	public void setUri(String uri) {
 		this.uri = uri;
 	}
 	
@@ -108,6 +108,31 @@ public class EnvironmentInfo {
 	 */
 	public void setBoundServices(String boundServices) {
 		this.boundServices = boundServices;
+	}
+	
+	/**
+	 * Overrides Object's toString method to return the
+	 * state of the Environemnt object.
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Environment = [applicationName: ");
+		sb.append(applicationName);
+		sb.append(", uri: ");
+		sb.append(uri);
+		sb.append(", instanceIndex: ");
+		sb.append(instanceIndex);
+		sb.append(", instanceIp: ");
+		sb.append(instanceIp);
+		sb.append(", instancePort: ");
+		sb.append(instancePort);
+		sb.append(", boundServices: ");
+		sb.append(boundServices);
+		sb.append("]");		
+		return sb.toString();
 	}
 
 }

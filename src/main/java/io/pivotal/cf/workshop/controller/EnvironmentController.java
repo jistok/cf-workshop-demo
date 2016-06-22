@@ -49,7 +49,18 @@ public class EnvironmentController {
 //		info.setBoundServices(System.getenv("VCAP_SERVICES")); // todo parse bound services
 //		info.setUri(vcapApplication.get("uris"));
 		
+		log.debug(String.format("Environment info = [%s]", info));
 		return info;
+	}
+	
+	/**
+	 * Kills the JVM process
+	 */
+	@RequestMapping(value = "/kill", method = RequestMethod.GET)
+	public void killProcess() {
+		
+		log.warn("Shutting down the JVM process.");
+		System.exit(0);
 	}
 
 }

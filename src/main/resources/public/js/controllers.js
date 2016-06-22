@@ -58,3 +58,27 @@ cfWorkshopApp.controller('EditAttendeeController', function($scope, $http, $rout
 	//Initial load
 	$scope.reset();
 });
+
+//Environment controller
+cfWorkshopApp.controller('EnvironmentController', function($scope, $http, $routeParams) {
+
+	//Handles the environment function
+	$scope.getEnvironment = function() {
+		$http.get("/environment/info").success(function(data) {
+			$scope.message = "";
+			$scope.environment = data;
+		});
+	};
+	
+	//Handles the kill function
+	$scope.kill = function() {
+		$http.get("/environment/kill").success(function(data) {
+			$scope.message = "Successfully killed the app instance.";
+		}).error(function(data) {
+			$scope.message = "Successfully killed the app instance.";			
+		});
+	}
+
+	//Initial load
+	$scope.getEnvironment();
+});

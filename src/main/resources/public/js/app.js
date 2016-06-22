@@ -9,9 +9,12 @@ cfWorkshopApp.config(['$routeProvider',
 			templateUrl: '/partials/editAttendee.html',
 			controller: 'EditAttendeeController'
 		}).when('/environment', {
-      templateUrl: '/partials/environment.html',
-      controller: 'EnvironmentController'
+			templateUrl: '/partials/environment.html',
+			controller: 'EnvironmentController'
+		}).when('/environment/kill', {
+			templateUrl: '/partials/environment.html',
+			controller: 'EnvironmentController'
     }).otherwise({
-			redirectTo: '/attendees'
+			redirectTo: '/environment'
 		})
 }])

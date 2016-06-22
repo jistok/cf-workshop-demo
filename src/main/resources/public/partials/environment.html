@@ -1,0 +1,58 @@
+<div ng-controller="EnvironmentController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<h2>Environment</h2>
+				<hr/>
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">Environment Information</h4>
+					</div>
+					<table class="table">
+						<tr>
+							<td>Application Name</td>
+							<td><em>{{environment.applicationName}}</em></td>
+						</tr>
+						<tr>
+							<td>URI</td>
+							<td><em>{{environment.uri}}</em></td>
+						</tr>						
+						<tr>
+							<td>Instance Index</td>
+							<td><em>{{environment.instanceIndex}}</em></td>
+						</tr>					
+						<tr>
+							<td>Instance IP</td>
+							<td><em>{{environment.instanceIp}}</em></td>
+						</tr>					
+						<tr>
+							<td>Instance Port</td>
+							<td><em>{{environment.instancePort}}</em></td>
+						</tr>					
+						<tr>
+							<td>Bound Services</td>
+							<td><em>{{environment.boundServices}}</em></td>
+						</tr>					
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<div class="well">
+					<a ng-click="javascript:window.location.reload();" class="btn btn-primary">Refresh</a>
+					<a ng-click="kill()" class="btn btn-danger">Kill</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
