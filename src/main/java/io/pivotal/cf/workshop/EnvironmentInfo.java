@@ -8,7 +8,7 @@ package io.pivotal.cf.workshop;
 public class EnvironmentInfo {
 
 	private String applicationName;
-	private String uri;
+	private String uris;
 	private String instanceIndex;
 	private String instanceIp;
 	private String instancePort;
@@ -31,19 +31,19 @@ public class EnvironmentInfo {
 	}
 	
 	/**
-	 * Gets the uri
+	 * Gets the uris
 	 * @return the uri
 	 */
-	public String getUri() {
-		return uri;
+	public String getUris() {
+		return uris;
 	}
 	
 	/**
-	 * Sets the uri
-	 * @param uris the uri to set
+	 * Sets the uris
+	 * @param uris the uris to set
 	 */
-	public void setUri(String uri) {
-		this.uri = uri;
+	public void setUris(String uris) {
+		this.uris = uris;
 	}
 	
 	/**
@@ -121,8 +121,8 @@ public class EnvironmentInfo {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Environment = [applicationName: ");
 		sb.append(applicationName);
-		sb.append(", uri: ");
-		sb.append(uri);
+		sb.append(", uris: ");
+		sb.append(uris);
 		sb.append(", instanceIndex: ");
 		sb.append(instanceIndex);
 		sb.append(", instanceIp: ");
