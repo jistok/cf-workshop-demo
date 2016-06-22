@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>io.pivotal.cf</groupId>
-	<artifactId>cf-workshop-boot</artifactId>
+	<artifactId>cf-workshop-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>cf-workshop-boot</name>
-	<description>Spring Boot Project for CF Workshops</description>
+	<name>cf-workshop-demo</name>
+	<description>Demo Spring Boot Project for CF Workshops</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -46,12 +46,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>
-				spring-boot-starter-data-elasticsearch
-			</artifactId>
 		</dependency>
 		<!-- JSON path assertions -->
 		<dependency>

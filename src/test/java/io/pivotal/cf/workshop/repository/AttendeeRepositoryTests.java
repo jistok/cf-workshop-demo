@@ -11,7 +11,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import io.pivotal.cf.workshop.CFWorkshopBootApplication;
+import io.pivotal.cf.workshop.CFWorkshopDemoApplication;
 import io.pivotal.cf.workshop.entity.Attendee;
 import junit.framework.TestCase;
 
@@ -30,7 +30,7 @@ import junit.framework.TestCase;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = CFWorkshopBootApplication.class)
+@SpringApplicationConfiguration(classes = CFWorkshopDemoApplication.class)
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class AttendeeRepositoryTests {
 	

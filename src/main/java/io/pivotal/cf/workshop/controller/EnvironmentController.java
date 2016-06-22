@@ -35,9 +35,10 @@ public class EnvironmentController {
 	@RequestMapping(value = "/info", method = RequestMethod.GET)
 	public @ResponseBody EnvironmentInfo getEnvironmentInfo() {
 		
-		String uris = null;
-		String boundServices = null;
-		String applicationName = null;
+		String uris = "[none]";
+		String boundServices = "[none]";
+		String applicationName = "[none]";
+		
 		JsonParser jsonParser = new JacksonJsonParser();
 		
 		//VCAP_APPLICATION
@@ -74,7 +75,6 @@ public class EnvironmentController {
 			}
 			boundServices = servicesBuilder.toString();
 		}
-		
 		
 		EnvironmentInfo info = new EnvironmentInfo();
 		info.setApplicationName(applicationName);

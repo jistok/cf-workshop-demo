@@ -9,13 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
-public class CFWorkshopBootApplication {
+public class CFWorkshopDemoApplication {
 
 	/**
 	 * The main entry point for the application.
 	 * @param args Any command line args passed.
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(CFWorkshopBootApplication.class, args);
+		SpringApplication.run(CFWorkshopDemoApplication.class, args);
 	}
 }

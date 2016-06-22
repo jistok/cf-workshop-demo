@@ -22,7 +22,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.pivotal.cf.workshop.CFWorkshopBootApplication;
+import io.pivotal.cf.workshop.CFWorkshopDemoApplication;
 import io.pivotal.cf.workshop.entity.Attendee;
 import junit.framework.TestCase;
 
@@ -40,7 +40,7 @@ import junit.framework.TestCase;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = CFWorkshopBootApplication.class)
+@SpringApplicationConfiguration(classes = CFWorkshopDemoApplication.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
