@@ -6,50 +6,50 @@
 var cfWorkshopControllers = angular.module('cfWorkshopControllers', []);
 
 //Attendee list controller
-cfWorkshopApp.controller('AttendeeListController', function($scope, $http) {
+cfWorkshopApp.controller('NoteListController', function($scope, $http) {
 
 	//Handles the delete request function
-	$scope.delete = function(attendeeId) {
-		$http.delete("/attendees/" + attendeeId).success(function(data, status, headers, config) {
-			$scope.getAttendees();
-			$scope.message = "Successfully deleted the attendee.";
+	$scope.delete = function(noteId) {
+		$http.delete("/notes/" + noteId).success(function(data, status, headers, config) {
+			$scope.getNotes();
+			$scope.message = "Successfully deleted the note.";
 			$scope.error = ""
 		}).error(function(data, status, headers, config) {
 			$scope.message = "";
-			$scope.error = "There was an error deleting the attendee.";
+			$scope.error = "There was an error deleting the note.";
 		});
 	};
 
 	//Reloads the data
-	$scope.getAttendees = function() {
-		$http.get('/attendees/').success(function(data) {
-			$scope.attendees = data;
+	$scope.getNotes = function() {
+		$http.get('/notes/').success(function(data) {
+			$scope.notes = data;
 		})
 	};
 
 	//Initial page load
-	$scope.getAttendees();
+	$scope.getNotes();
 });
 
-// Edit attendee controller
-cfWorkshopApp.controller('EditAttendeeController', function($scope, $http, $routeParams) {
+// Edit note controller
+cfWorkshopApp.controller('EditNoteController', function($scope, $http, $routeParams) {
 
 	//Handles the update request function
-	$scope.update = function(attendee) {
-		$http.post("/attendees/", attendee).success(function(data, status, headers, config) {
-			$scope.attendee = data;
-			$scope.message = "Successfully saved the attendee.";
+	$scope.update = function(note) {
+		$http.post("/notes/", note).success(function(data, status, headers, config) {
+			$scope.note = data;
+			$scope.message = "Successfully saved the note.";
 			$scope.error = "";
 		}).error(function(data, status, headers, config) {
 			$scope.message = "";
-			$scope.error = "There was an error saving the attendee.";
+			$scope.error = "There was an error saving the note.";
 		});
 	};
 
 	//Handles the reset request function and the initial load of the attendee
-	$scope.reset = function(attendee) {
-		$http.get('/attendees/' + $routeParams.attendeeId).success(function(data) {
-			$scope.attendee = data;
+	$scope.reset = function(note) {
+		$http.get('/notes/' + $routeParams.noteId).success(function(data) {
+			$scope.note = data;
 			$scope.message = "";
 			$scope.error = "";
 		});

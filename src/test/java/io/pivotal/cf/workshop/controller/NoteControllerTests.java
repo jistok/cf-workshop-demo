@@ -21,18 +21,12 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.pivotal.cf.workshop.entity.Attendee;
+import io.pivotal.cf.workshop.entity.Note;
 import junit.framework.TestCase;
 
 
 /**
- * Integration tests for the <code>TimeEntryController</code> class.
- * 
- * The <code>SpringApplicationConfiguration</code>
- * annotation ensures that the proper configuration (i.e.
- * embedded database and data source) is applied.  The 
- * <code>IntegrationTest</code> annotation starts the 
- * embedded Tomcat server for the controller.
+ * Integration tests for the <code>noteController</code> class.
  * 
  * @author Brian Jimerson
  *
@@ -40,9 +34,9 @@ import junit.framework.TestCase;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
-public class AttendeeControllerTests {
+public class NoteControllerTests {
 	
-	private static final Log log = LogFactory.getLog(AttendeeControllerTests.class);
+	private static final Log log = LogFactory.getLog(NoteControllerTests.class);
 		
 	@Autowired
 	EmbeddedWebApplicationContext server;
@@ -58,13 +52,13 @@ public class AttendeeControllerTests {
 	}
 
 	/**
-	 * Tests the get all attendees method of the controller.
+	 * Tests the get all notes method of the controller.
 	 */
 	@Test
-	public void testGetAllAttendees() {
+	public void testGetAllNotes() {
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.get("/attendees/"))
+					MockMvcRequestBuilders.get("/notes/"))
 					.andExpect(MockMvcResultMatchers.status().isOk())
 					.andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
 		} catch (Exception e) {
@@ -74,16 +68,16 @@ public class AttendeeControllerTests {
 	}
 	
 	/**
-	 * Tests the get attendee by id method of the controller.
+	 * Tests the get note by id method of the controller.
 	 */
 	@Test
-	public void testGetAttendeesById() {
+	public void testGetNoteById() {
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.get("/attendees/5001"))
+					MockMvcRequestBuilders.get("/notes/5001"))
 					.andExpect(MockMvcResultMatchers.status().isOk())
 					.andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"))
-					.andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasEntry("firstName", "John")));
+					.andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasEntry("text", "Text 1")));
 		} catch (Exception e) {
 			log.error(e);
 			TestCase.fail(e.getMessage());
@@ -91,21 +85,20 @@ public class AttendeeControllerTests {
 	}
 	
 	/**
-	 * Tests the save attendee method of the controller.
+	 * Tests the save note method of the controller.
 	 */
 	@Test
-	public void testSaveAttendee() {
-		Attendee entry = new Attendee("First", "Last", "Address", "City", 
-				"State", "Zip", "Phone", "Email");
+	public void testSaveNote() {
+		Note note = new Note("Test note text");
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.post("/attendees/")
+					MockMvcRequestBuilders.post("/notes/")
 					.contentType("application/json")
-					.content(new ObjectMapper().writeValueAsString(entry))
+					.content(new ObjectMapper().writeValueAsString(note))
 			)
 			.andDo(MockMvcResultHandlers.print())
 			.andExpect(MockMvcResultMatchers.status().isOk())
-			.andExpect(MockMvcResultMatchers.jsonPath("$.attendeeId").exists());
+			.andExpect(MockMvcResultMatchers.jsonPath("$.noteId").exists());
 		} catch (Exception e) {
 			log.error(e);
 			TestCase.fail(e.getMessage());
@@ -113,13 +106,13 @@ public class AttendeeControllerTests {
 	}
 	
 	/**
-	 * Tests the delete attendee method of the controller.
+	 * Tests the delete note method of the controller.
 	 */
 	@Test
-	public void testDeleteAttendee() {
+	public void testDeleteNote() {
 		try {
 			this.mvc.perform(
-					MockMvcRequestBuilders.delete("/attendees/5001"))
+					MockMvcRequestBuilders.delete("/notes/5001"))
 					.andExpect(MockMvcResultMatchers.status().isOk());
 					
 		} catch (Exception e) {

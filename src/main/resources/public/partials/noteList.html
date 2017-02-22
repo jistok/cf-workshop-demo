@@ -1,0 +1,51 @@
+<div ng-controller="NoteListController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>All Notes</h2>
+				<hr/>
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-12">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-12">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Created</th>
+							<th>Note</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Display each entry in a row -->
+						<tr ng-repeat="note in notes">
+							<td>{{note.created}}</td>
+							<td>{{note.text}}</td>
+							<td>
+								<a href="#/notes/{{note.noteId}}" class="btn btn-primary btn-sm">Edit</a>
+								<input type="button" ng-click="delete(note.noteId)" class="btn btn-danger btn-sm" value="Delete"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="well">
+					<a href="#/notes/new" class="btn btn-success">New Note</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

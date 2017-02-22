@@ -2,12 +2,12 @@ var cfWorkshopApp = angular.module('cfWorkshopApp', ['ngRoute', 'cfWorkshopContr
 
 cfWorkshopApp.config(['$routeProvider',
     function($routeProvider) {
-		$routeProvider.when('/attendees', {
-			templateUrl: '/partials/attendeeList.html',
-			controller: 'AttendeeListController'
-		}).when('/attendees/:attendeeId', {
-			templateUrl: '/partials/editAttendee.html',
-			controller: 'EditAttendeeController'
+		$routeProvider.when('/notes', {
+			templateUrl: '/partials/noteList.html',
+			controller: 'NoteListController'
+		}).when('/notes/:noteId', {
+			templateUrl: '/partials/editNote.html',
+			controller: 'EditNoteController'
 		}).when('/environment', {
 			templateUrl: '/partials/environment.html',
 			controller: 'EnvironmentController'

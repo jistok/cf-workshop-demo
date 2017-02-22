@@ -1,0 +1,41 @@
+<div ng-controller="EditNoteController">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<h2>Note Details</h2>
+				<div>
+					<a href="#/notes">Back to Note List</a>
+				</div>
+				<hr/>
+			</div>
+		</div>
+		<div class="row" ng-show="message">
+			<div class="col-md-10">
+				<div class="alert alert-info" role="alert">{{message}}</div>
+			</div>
+		</div>
+		<div class="row" ng-show="error">
+			<div class="col-md-10">
+				<div class="alert alert-danger" role="alert">{{error}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10">
+				<form>
+					<div class="form-group">
+						<label for="created">Created</label>
+						<input type="text" id="created" readonly="readonly" class="form-control" ng-model="note.created" value="{{note.created}}" placeholder="Created"/>
+					</div>
+					<div class="form-group">
+						<label for="text">Note:</label>
+						<input type="text" id="text" class="form-control" ng-model="note.text" value="{{note.text}}" placeholder="Note" required="required"/>
+					</div>
+					<div class="well">
+						<input type="submit" ng-click="update(note)" class="btn btn-primary" value="Save"/>
+						<input type="button" ng-click="reset()" class="btn btn-warning" value="Reset"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
