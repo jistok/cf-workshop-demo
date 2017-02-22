@@ -5,13 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import io.pivotal.cf.workshop.CFWorkshopDemoApplication;
 import io.pivotal.cf.workshop.entity.Attendee;
 import junit.framework.TestCase;
 
@@ -29,8 +28,8 @@ import junit.framework.TestCase;
  * @author Brian Jimerson
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = CFWorkshopDemoApplication.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class AttendeeRepositoryTests {
 	
