@@ -23,11 +23,13 @@
 			<div class="col-md-10">
 				<form>
 					<div class="form-group">
-						<label for="created">Created</label>
-						<input type="text" id="created" readonly="readonly" class="form-control" ng-model="note.created" value="{{note.created}}" placeholder="Created"/>
+						<label class="control-label">Created:</label>
+						<div>
+							<p class="form-control-static">{{note.created | date:'short'}}</p>
+						</div>
 					</div>
 					<div class="form-group">
-						<label for="text">Note:</label>
+						<label for="text" class="control-label">Note:</label>
 						<input type="text" id="text" class="form-control" ng-model="note.text" value="{{note.text}}" placeholder="Note" required="required"/>
 					</div>
 					<div class="well">

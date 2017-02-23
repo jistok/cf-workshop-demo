@@ -91,7 +91,7 @@ public class Note {
 	}
 	
 	public String toString() {
-		return String.format("Note = [id: %1$d, created: %2$tm/%2$tD/%2$tY %2$tH:%2$tM, text: %3$s]", 
+		return String.format("Note = [id: %1$d, created:%2$tD %2$tT, text: %3$s]", 
 				this.getNoteId(),
 				this.getCreated(),
 				this.getText());

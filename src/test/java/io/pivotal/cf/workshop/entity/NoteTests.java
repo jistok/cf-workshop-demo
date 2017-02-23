@@ -15,7 +15,7 @@ public class NoteTests {
 
 	private Note note;
 	
-	private static final String EXPECTED_TO_STRING = "Note = [id: %1$d, created: %2$tm/%2$tD/%2$tY %2$tH:%2$tM, text: %3$s]";
+	private static final String EXPECTED_TO_STRING = "Note = [id: %1$d, created:%2$tD %2$tT, text: %3$s]";
 	
 	@Before
 	public void setUp() throws Exception {

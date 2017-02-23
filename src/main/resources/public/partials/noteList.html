@@ -29,7 +29,7 @@
 					<tbody>
 						<!-- Display each entry in a row -->
 						<tr ng-repeat="note in notes">
-							<td>{{note.created}}</td>
+							<td>{{note.created | date:'short'}}</td>
 							<td>{{note.text}}</td>
 							<td>
 								<a href="#/notes/{{note.noteId}}" class="btn btn-primary btn-sm">Edit</a>
