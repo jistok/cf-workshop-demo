@@ -1,0 +1,5 @@
+cf-api: <<cloud foundry api url>>
+cf-username: <<cloud foundry username>>
+cf-password: <<cloud foundry password>>
+cf-org: <<cloud foundry target org>>
+cf-space: <<cloud foundry target space>>
