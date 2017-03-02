@@ -54,6 +54,47 @@ public class NoteRepositoryTests {
 	}
 	
 	/**
+	 * Tests the repository's findOne method.
+	 */
+	@Test
+	public void testFindOne() {
+		Note note = noteRepository.findOne(5001L);
+		TestCase.assertNotNull("ID 5001 should return a Note.", note);
+	}
+	
+	/**
+	 * Tests the repository's save method, by saving a note and
+	 * asserting that there's an ID on the note returned.
+	 */
+	@Test
+	public void testSave() {
+		note = noteRepository.save(note);
+		TestCase.assertNotNull("Saving a note should set the Note's ID.", note.getNoteId());
+	}
+	
+	/**
+	 * Tests the repository's save method for an existing Note.
+	 */
+	@Test
+	public void testUpdate() {
+		Note note = noteRepository.findOne(5001L);
+		note.setText("Changed note text.");
+		note = noteRepository.save(note);
+		TestCase.assertEquals("Note text should be updated.", "Changed note text.", note.getText());
+		TestCase.assertEquals("Note ID shouldn't change.", 5001L, note.getNoteId().longValue());
+	}
+	
+	/**
+	 * Tests the repository's delete method.
+	 */
+	@Test
+	public void testDelete() {
+		noteRepository.delete(5001L);
+		Note note = noteRepository.findOne(5001L);
+		TestCase.assertNull("Note with ID 5001 shouldn't exist after delete.", note);
+	}
+	
+	/**
 	 * Tests the text is not nullable
 	 */
 	@Test(expected = DataIntegrityViolationException.class)
