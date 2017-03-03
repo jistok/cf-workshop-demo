@@ -3,4 +3,6 @@
 .project
 .springBeans
 .DS_Store
+*.iml
+.idea
 target/
