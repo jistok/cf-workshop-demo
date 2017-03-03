@@ -18,7 +18,7 @@ import junit.framework.TestCase;
  * JPA repository interface.
  * 
  * Most of the methods tested (<code>findOne</code>, <code>save</code>),
- * are provided by the base CrudRepository class.
+ * are provided by the base CrudRepository interface.
  * 
  * @author Brian Jimerson
  *
