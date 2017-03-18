@@ -16,10 +16,10 @@ import junit.framework.TestCase;
 /**
  * Integration tests for the <code>NoteRepository</code>
  * JPA repository interface.
- * 
+ *
  * Most of the methods tested (<code>findOne</code>, <code>save</code>),
  * are provided by the base CrudRepository interface.
- * 
+ *
  * @author Brian Jimerson
  *
  */
@@ -27,7 +27,7 @@ import junit.framework.TestCase;
 @SpringBootTest
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 public class NoteRepositoryTests {
-	
+
 	@Autowired
 	private NoteRepository noteRepository;
 	private Note note;
@@ -40,10 +40,10 @@ public class NoteRepositoryTests {
 	public void setUp() throws Exception {
 		note = new Note("Test note text.");
 	}
-	
+
 	/**
 	 * Tests the repository's findAll method, by asserting that
-	 * there is more than 0 attendees returned.
+	 * there is more than 0 notes returned.
 	 */
 	@Test
 	public void testFindAll() {
@@ -52,7 +52,7 @@ public class NoteRepositoryTests {
 				"Find all should return at least 1 result.",
 				notes.iterator().hasNext());
 	}
-	
+
 	/**
 	 * Tests the repository's findOne method.
 	 */
@@ -61,7 +61,7 @@ public class NoteRepositoryTests {
 		Note note = noteRepository.findOne(5001L);
 		TestCase.assertNotNull("ID 5001 should return a Note.", note);
 	}
-	
+
 	/**
 	 * Tests the repository's save method, by saving a note and
 	 * asserting that there's an ID on the note returned.
@@ -71,7 +71,7 @@ public class NoteRepositoryTests {
 		note = noteRepository.save(note);
 		TestCase.assertNotNull("Saving a note should set the Note's ID.", note.getNoteId());
 	}
-	
+
 	/**
 	 * Tests the repository's save method for an existing Note.
 	 */
@@ -83,7 +83,7 @@ public class NoteRepositoryTests {
 		TestCase.assertEquals("Note text should be updated.", "Changed note text.", note.getText());
 		TestCase.assertEquals("Note ID shouldn't change.", 5001L, note.getNoteId().longValue());
 	}
-	
+
 	/**
 	 * Tests the repository's delete method.
 	 */
@@ -93,7 +93,7 @@ public class NoteRepositoryTests {
 		Note note = noteRepository.findOne(5001L);
 		TestCase.assertNull("Note with ID 5001 shouldn't exist after delete.", note);
 	}
-	
+
 	/**
 	 * Tests the text is not nullable
 	 */
@@ -102,5 +102,5 @@ public class NoteRepositoryTests {
 		note.setText(null);
 		noteRepository.save(note);
 	}
-	
+
 }
