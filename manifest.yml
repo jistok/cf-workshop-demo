@@ -1,8 +1,8 @@
 applications:
-- name: cf-workshop-boot
+- name: cf-workshop-demo
   instances: 1
   memory: 1024M
   disk_quota: 1024M
-  host: cf-workshop-boot
+  host: cf-workshop-demo
   path: target/cf-workshop-demo-1.0.1.RELEASE.jar
   stack: cflinuxfs2
