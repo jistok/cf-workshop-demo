@@ -67,14 +67,13 @@
             <repository>
                 <id>artifactory-local</id>
                 <name>CF Workshop Milestone Repository</name>
-                <url>http://artifactory.snbv2.com/artifactory/libs-release-local</url>
+                <url>http://artifactory.snbv2.com:8081/artifactory/libs-release-local</url>
             </repository>
             <snapshotRepository>
                 <id>artifactory-local</id>
                 <name>CF Workshop Snapshot Repository</name>
-                <url>http://artifactory.snbv2.com/artifactory/libs-snapshot-local</url>
+                <url>http://artifactory.snbv2.com:8081/artifactory/libs-snapshot-local</url>
             </snapshotRepository>
         </distributionManagement>
-	
 
 </project>
