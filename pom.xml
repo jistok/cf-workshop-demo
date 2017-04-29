@@ -21,6 +21,9 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+                <distributionManagement.repository.id>artifactory-local</distributionManagement.repository.id>
+                <distributionManagement.repository.url>http://artifactory.snbv2.com/artifactory/libs-release-local</distributionManagement.repository.url>
+                <distributionManagement.snapshotRepository.url>http://artifactory.snbv2.com/artifactory/libs-snapshot-local</distributionManagement.snapshotRepository.url>
 	</properties>
 
 	<dependencies>
@@ -62,6 +65,19 @@
 			</plugin>
 		</plugins>
 	</build>
+        
+        <distributionManagement>
+            <repository>
+                <id>${distributionManagement.repository.id}</id>
+                <name>CF Workshop Milestone Repository</name>
+                <url>${distributionManagment.repository.url}</url>
+            </repository>
+            <snapshotRepository>
+                <id>${distributionManagement.repository.id}</id>
+                <name>CF Workshop Snapshot Repository</name>
+                <url>${distributionManagment.snapshotRepository.url}</url>
+            </snapshotRepository>
+        </distributionManagement>
 	
 
 </project>
