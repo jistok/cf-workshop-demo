@@ -64,12 +64,12 @@
         
         <distributionManagement>
             <repository>
-                <id>artifactory-local</id>
+                <id>artifactory</id>
                 <name>CF Workshop Milestone Repository</name>
                 <url>http://artifactory.snbv2.com:8081/artifactory/libs-release-local</url>
             </repository>
             <snapshotRepository>
-                <id>artifactory-local</id>
+                <id>artifactory</id>
                 <name>CF Workshop Snapshot Repository</name>
                 <url>http://artifactory.snbv2.com:8081/artifactory/libs-snapshot-local</url>
             </snapshotRepository>
