@@ -1,4 +1,4 @@
-package io.pivotal.cf.workshop.controller;
+package io.pivotal.workshop.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.cf.workshop.entity.Note;
-import io.pivotal.cf.workshop.repository.NoteRepository;
+import io.pivotal.workshop.entity.Note;
+import io.pivotal.workshop.repository.NoteRepository;
 
 /**
  * REST controller for working with notes

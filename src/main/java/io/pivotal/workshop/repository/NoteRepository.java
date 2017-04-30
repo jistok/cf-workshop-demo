@@ -1,8 +1,8 @@
-package io.pivotal.cf.workshop.repository;
+package io.pivotal.workshop.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import io.pivotal.cf.workshop.entity.Note;
+import io.pivotal.workshop.entity.Note;
 
 /**
  * JPA repository for the Note entity.

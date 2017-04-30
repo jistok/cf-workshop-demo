@@ -1,4 +1,4 @@
-package io.pivotal.cf.workshop;
+package io.pivotal.workshop;
 
 /**
  * Simple class to store environment information.

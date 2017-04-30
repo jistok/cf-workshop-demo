@@ -1,4 +1,4 @@
-package io.pivotal.cf.workshop.controller;
+package io.pivotal.workshop.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -21,7 +21,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.pivotal.cf.workshop.entity.Note;
+import io.pivotal.workshop.entity.Note;
 import junit.framework.TestCase;
 
 

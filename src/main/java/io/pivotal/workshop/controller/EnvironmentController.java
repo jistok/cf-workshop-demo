@@ -1,4 +1,4 @@
-package io.pivotal.cf.workshop.controller;
+package io.pivotal.workshop.controller;
 
 import java.util.Iterator;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.cf.workshop.EnvironmentInfo;
+import io.pivotal.workshop.EnvironmentInfo;
 
 /**
  * REST controller for environment information.

@@ -1,4 +1,4 @@
-package io.pivotal.cf.workshop.entity;
+package io.pivotal.workshop.entity;
 
 import java.util.Date;
 

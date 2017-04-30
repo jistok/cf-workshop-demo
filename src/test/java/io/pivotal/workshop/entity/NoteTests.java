@@ -1,5 +1,6 @@
-package io.pivotal.cf.workshop.entity;
+package io.pivotal.workshop.entity;
 
+import io.pivotal.workshop.entity.Note;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,5 +1,6 @@
-package io.pivotal.cf.workshop.repository;
+package io.pivotal.workshop.repository;
 
+import io.pivotal.workshop.repository.NoteRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +11,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.pivotal.cf.workshop.entity.Note;
+import io.pivotal.workshop.entity.Note;
 import junit.framework.TestCase;
 
 /**
