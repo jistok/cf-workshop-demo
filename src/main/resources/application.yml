@@ -15,7 +15,7 @@ logging:
 eureka:
     client:
         serviceUrl:
-            defaultZone: ${vcap.services.eureka-service.credentials.uri:http://localhost:8761/eureka/}
+            defaultZone: ${vcap.services.user-provided[0].credentials.uri:http://localhost:8761/eureka/}
     instance:
         metadataMap:
             instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
