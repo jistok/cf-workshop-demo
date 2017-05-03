@@ -5,7 +5,7 @@
 
 var cfWorkshopControllers = angular.module('cfWorkshopControllers', []);
 
-//Attendee list controller
+//Note list controller
 cfWorkshopApp.controller('NoteListController', function($scope, $http) {
 
 	//Handles the delete request function
@@ -46,7 +46,7 @@ cfWorkshopApp.controller('EditNoteController', function($scope, $http, $routePar
 		});
 	};
 
-	//Handles the reset request function and the initial load of the attendee
+	//Handles the reset request function and the initial load of the note
 	$scope.reset = function(note) {
 		$http.get('/notes/' + $routeParams.noteId).success(function(data) {
 			$scope.note = data;
