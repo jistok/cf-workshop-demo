@@ -48,7 +48,7 @@ public class NoteController {
 	}
 	
 	/**
-	 * Gets an note by the id
+	 * Gets a note by the id
 	 * @param noteId The id of the note
 	 * @return The note with the specified id
 	 */
@@ -62,7 +62,7 @@ public class NoteController {
 	}
 	
 	/**
-	 * Saves an note
+	 * Saves a note
 	 * @param note The note to save
 	 * @return The note saved
 	 */
@@ -76,7 +76,7 @@ public class NoteController {
 	}
 	
 	/**
-	 * Deletes an note
+	 * Deletes a note
 	 * @param note The note to delete
 	 */
 	@RequestMapping(value = "/{noteId}", method = RequestMethod.DELETE)

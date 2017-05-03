@@ -90,6 +90,10 @@ public class Note {
 		this.text = text;
 	}
 	
+	/**
+	 * Overrides Object's toString method for the state of this note.
+	 * @return The state of this note.
+	 */
 	public String toString() {
 		return String.format("Note = [id: %1$d, created:%2$tD %2$tT, text: %3$s]", 
 				this.getNoteId(),
