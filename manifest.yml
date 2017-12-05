@@ -1,7 +1,9 @@
 applications:
-- name: cf-workshop-demo
-  host: cfworkshop
+- name: cf-workshop-new
+  host: cfworkshop-new
   instances: 1
   memory: 1024M
   stack: cflinuxfs2
   path: target/cf-workshop-demo-1.0.1.RELEASE.jar
+  env:
+        CLOUDSQL_REGION: us-central1
